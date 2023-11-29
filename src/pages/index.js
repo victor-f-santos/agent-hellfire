@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Nav from "../Components/Nav";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <Nav></Nav>
+      {isOpen && <Nav />}
+
+      <h4 onClick={() => setIsOpen(!isOpen)}>Abrir menu</h4>
       <main>
         <section class="background-image">
           <Image
