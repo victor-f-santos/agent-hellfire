@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  background-image: url(img/Logo_BR_Transparent.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: aliceblue;
+}
+
+.background-image {
+  max-width: 400px;
+}
