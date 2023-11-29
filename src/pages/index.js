@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <>
@@ -11,11 +13,12 @@ export default function Home() {
         <a href="#contact">Contact</a>
       </nav>
       <main>
-        <section>
-          <img
-            class="background-image"
+        <section class="background-image">
+          <Image
             src="/img/Logo_BR_Transparent.png"
             alt="Agent Hellfire Logo"
+            fill
+            style={{ objectFit: "contain" }}
           />
         </section>
         <article class="band-bio">
