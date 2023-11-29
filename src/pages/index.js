@@ -1,17 +1,15 @@
 import Image from "next/image";
+import Nav from "../Components/Nav";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <nav class="nav-bar">
-        <a href="#bio">Bio</a>
-        <a href="#members">Members</a>
-        <a href="#fotos">Fotos</a>
-        <a href="#videos">Videos</a>
-        <a href="#music">Music</a>
-        <a href="#store">Store</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      {isOpen && <Nav />}
+
+      <h4 onClick={() => setIsOpen(!isOpen)}>Abrir menu</h4>
       <main>
         <section class="background-image">
           <Image
@@ -249,7 +247,7 @@ export default function Home() {
           ></iframe>
         </section>
         <section class="music">
-          <h2>Music</h2>
+          <h2 id="music">Music</h2>
           <img
             class="music--album-cover"
             src="/img/covers/1-1_COVER_FINAL_LOGO_RGB (1).jpg"
