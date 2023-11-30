@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Members() {
   return (
     <>
-      <article class="members">
+      <article className="members-left">
         <h2 id="members">Members</h2>
-        <h4>Adans Aldani</h4>
+        <h4 className="name-members">Adans Aldani</h4>
         <section className="imageWrapper">
           <Image
             src="/img/profile/Adans.jpg"
@@ -39,8 +39,8 @@ export default function Members() {
           />
         </a>
       </article>
-      <article class="members">
-        <h4>Victor Munhoz</h4>
+      <h4 className="name-members">Victor Munhoz</h4>
+      <article className="members-right">
         <section className="imageWrapper">
           <Image
             src="/img/profile/Victor.jpg"
@@ -49,7 +49,6 @@ export default function Members() {
             height={300}
           />
         </section>
-        <p>Picture: http://www.fh-eventfotografie.de/</p>
         <p>
           Born and raised in São Paulo, Brazil, Victor started his journey on
           drums by the age of 14, taking classes at a local music school but his
@@ -66,6 +65,7 @@ export default function Members() {
           Check out what he’s been up to on his Instagram Account and Youtube
           Channel.
         </p>
+        <p>Picture: http://www.fh-eventfotografie.de/</p>
         <a target="_blank" href="https://www.instagram.com/victormunhoz89/">
           <Image
             class="img-icon"
