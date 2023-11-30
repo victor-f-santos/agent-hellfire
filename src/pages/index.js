@@ -23,7 +23,7 @@ export default function Home() {
         </section>
         <article class="band-bio">
           <h2 id="bio">Bio</h2>
-          <p class="band-bio">
+          <p>
             Agent Hellfire is a thrash metal band formed in the spring of 2019.
             The trio originally from Brazil gathered in Berlin to make an old
             school metal, mixing it with modern elements, creating something

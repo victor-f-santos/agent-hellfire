@@ -20,6 +20,8 @@ body {
 .menu-toggle {
   position: fixed;
   margin: 0 10px;
+  top: 5px;
+  left: 5px;
 }
 
 .nav-bar {
@@ -44,4 +46,17 @@ body {
 .nav-bar a:hover {
   color: white;
   font-size: 20px;
+}
+
+.band-bio {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(52, 58, 64, 0.5);
+  margin: 50px auto;
+}
+
+.band-bio > p {
+  text-align: justify;
+  padding: 30px;
 }
