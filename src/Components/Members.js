@@ -14,7 +14,6 @@ export default function Members() {
             height={1000}
           />
         </section>
-        <p>Picture: Phillip DoK</p>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
           repellendus facere voluptate maiores ab reiciendis placeat voluptatum
@@ -29,6 +28,7 @@ export default function Members() {
           voluptates nemo libero reprehenderit fugit. Sed delectus nulla
           nostrum. A tenetur optio nihil modi exercitationem enim.
         </p>
+        <p>Picture: Phillip DoK</p>
         <a target="_blank" href="https://www.instagram.com/adans_ix/">
           <Image
             class="img-icon"
