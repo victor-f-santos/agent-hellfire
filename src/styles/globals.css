@@ -8,6 +8,7 @@ body {
   background-color: black;
   color: aliceblue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .background-image {
@@ -16,11 +17,19 @@ body {
   z-index: -1;
 }
 
+.menu-toggle {
+  position: fixed;
+  margin: 0 10px;
+}
+
 .nav-bar {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 100%;
   align-items: center;
-  padding: 50px;
+  background-color: rgb(52, 58, 64, 0.6);
+  padding: 30px;
 }
 
 .nav-bar a {
@@ -34,4 +43,5 @@ body {
 
 .nav-bar a:hover {
   color: white;
+  font-size: 20px;
 }

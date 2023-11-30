@@ -8,8 +8,10 @@ export default function Home() {
   return (
     <>
       {isOpen && <Nav />}
+      <div onClick={() => setIsOpen(!isOpen)} className="menu-toggle">
+        <Image src="/img/menu.png" alt="Menu Toggle" width={40} height={40} />
+      </div>
 
-      <h4 onClick={() => setIsOpen(!isOpen)}>Abrir menu</h4>
       <main>
         <section class="background-image">
           <Image
@@ -20,7 +22,7 @@ export default function Home() {
           />
         </section>
         <article class="band-bio">
-          <h2>Bio</h2>
+          <h2 id="bio">Bio</h2>
           <p class="band-bio">
             Agent Hellfire is a thrash metal band formed in the spring of 2019.
             The trio originally from Brazil gathered in Berlin to make an old
@@ -39,6 +41,7 @@ export default function Home() {
           </p>
         </article>
         <article class="members">
+          <h2 id="members">Members</h2>
           <h4>Adans Aldani</h4>
           <img
             src="/img/profile/Adans.jpg"
@@ -107,6 +110,7 @@ export default function Home() {
           </a>
         </article>
         <section class="fotos--shooting">
+          <h2 id="fotos">Fotos</h2>
           <h4>Foto Shooting</h4>
           <img
             class="shooting-img"
@@ -224,7 +228,7 @@ export default function Home() {
           />
         </section>
         <section class="videos">
-          <h2>Videos</h2>
+          <h2 id="videos">Videos</h2>
           <p>D.T. Official Music Video</p>
           <iframe
             width="560"
@@ -271,7 +275,7 @@ export default function Home() {
           ></iframe>
         </section>
         <section class="contact">
-          <h2>Contact</h2>
+          <h2 id="contact">Contact</h2>
           <p>
             For booking, requests, or if you're just bored and wanna waste your
             time and ours, be free to write us an e-mail so we properly ignore
