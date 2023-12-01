@@ -7,11 +7,9 @@ import Fotos from "@/Components/Fotos";
 import Videos from "@/Components/Videos";
 import Music from "@/Components/Music";
 import Contact from "@/Components/Contact";
-import Footer from "@/Components/Footer";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       {isOpen && <Nav />}
@@ -39,8 +37,6 @@ export default function Home() {
       <Music />
 
       <Contact />
-
-      <Footer />
     </>
   );
 }
