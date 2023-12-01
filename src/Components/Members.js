@@ -3,18 +3,19 @@ import Image from "next/image";
 export default function Members() {
   return (
     <>
-      <article class="members">
-        <h2 id="members">Members</h2>
-        <h4>Adans Aldani</h4>
-        <section className="imageWrapper">
-          <Image
-            src="/img/profile/Adans.jpg"
-            alt="Adans Aldani playing bass at Sage Club in Berlin"
-            width={1000}
-            height={1000}
-          />
-        </section>
-        <p>
+      <h2 id="members">Members</h2>
+      <article className="members--card">
+        <h4 className="name-members">Adans Aldani</h4>
+
+        <Image
+          className="members--img"
+          src="/img/profile/Adans.jpg"
+          alt="Adans Aldani playing bass at Sage Club in Berlin"
+          width={100}
+          height={100}
+        />
+
+        <p className="members--text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
           repellendus facere voluptate maiores ab reiciendis placeat voluptatum
           nulla, fugit veniam unde doloremque numquam nihil delectus
@@ -39,8 +40,8 @@ export default function Members() {
           />
         </a>
       </article>
-      <article class="members">
-        <h4>Victor Munhoz</h4>
+      <h4 className="name-members">Victor Munhoz</h4>
+      <article className="members-right">
         <section className="imageWrapper">
           <Image
             src="/img/profile/Victor.jpg"
@@ -49,7 +50,6 @@ export default function Members() {
             height={300}
           />
         </section>
-        <p>Picture: http://www.fh-eventfotografie.de/</p>
         <p>
           Born and raised in São Paulo, Brazil, Victor started his journey on
           drums by the age of 14, taking classes at a local music school but his
@@ -66,6 +66,7 @@ export default function Members() {
           Check out what he’s been up to on his Instagram Account and Youtube
           Channel.
         </p>
+        <p>Picture: http://www.fh-eventfotografie.de/</p>
         <a target="_blank" href="https://www.instagram.com/victormunhoz89/">
           <Image
             class="img-icon"
