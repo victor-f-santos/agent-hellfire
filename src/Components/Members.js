@@ -3,18 +3,19 @@ import Image from "next/image";
 export default function Members() {
   return (
     <>
-      <article className="members-left">
-        <h2 id="members">Members</h2>
+      <h2 id="members">Members</h2>
+      <article className="members--card">
         <h4 className="name-members">Adans Aldani</h4>
-        <section className="imageWrapper">
-          <Image
-            src="/img/profile/Adans.jpg"
-            alt="Adans Aldani playing bass at Sage Club in Berlin"
-            width={1000}
-            height={1000}
-          />
-        </section>
-        <p>
+
+        <Image
+          className="members--img"
+          src="/img/profile/Adans.jpg"
+          alt="Adans Aldani playing bass at Sage Club in Berlin"
+          width={100}
+          height={100}
+        />
+
+        <p className="members--text">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
           repellendus facere voluptate maiores ab reiciendis placeat voluptatum
           nulla, fugit veniam unde doloremque numquam nihil delectus

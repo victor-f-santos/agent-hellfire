@@ -58,7 +58,7 @@ h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(52, 58, 64, 0.5);
+  background-color: rgb(52, 58, 64);
   margin: 50px auto;
   padding: 10px;
 }
@@ -74,10 +74,23 @@ h2 {
   height: 300px;
 }
 
-.members-left {
+.members--card {
   display: flex;
-  flex-flow: column wrap;
-  text-align: start;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 375px;
+  background-color: #ce0808;
+  margin: 30px auto;
+  padding: 20px 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.members--img {
+  object-fit: cover;
+  width: fit-content;
+  border-radius: 20px;
 }
 
 .members-right {
