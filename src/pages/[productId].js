@@ -19,7 +19,7 @@ export default function ProductDetails() {
     <div>
       <h1>Product Details</h1>
       {name}
-      {/* {images} */}
+      {images}
       {price}
       {size}
       {description}

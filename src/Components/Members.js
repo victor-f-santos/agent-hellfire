@@ -4,15 +4,14 @@ export default function Members() {
   return (
     <>
       <h2 id="members">Members</h2>
+      <h4 className="members--name">Adans Aldani</h4>
       <article className="members--card">
-        <h4 className="name-members">Adans Aldani</h4>
-
         <Image
           className="members--img"
-          src="/img/profile/Adans.jpg"
+          src={"/img/profile/IMG_9488.jpg"}
           alt="Adans Aldani playing bass at Sage Club in Berlin"
-          width={100}
-          height={100}
+          width={700}
+          height={600}
         />
 
         <p className="members--text">
@@ -29,7 +28,7 @@ export default function Members() {
           voluptates nemo libero reprehenderit fugit. Sed delectus nulla
           nostrum. A tenetur optio nihil modi exercitationem enim.
         </p>
-        <p>Picture: Phillip DoK</p>
+        <p>Picture: Kaie Orloff</p>
         <a target="_blank" href="https://www.instagram.com/adans_ix/">
           <Image
             class="img-icon"
@@ -40,14 +39,15 @@ export default function Members() {
           />
         </a>
       </article>
-      <h4 className="name-members">Victor Munhoz</h4>
-      <article className="members-right">
+      <h4 className="members--name">Victor Munhoz</h4>
+      <article>
         <section className="imageWrapper">
           <Image
-            src="/img/profile/Victor.jpg"
-            alt="Victor Munhoz playing drums at RUDE Festival"
-            width={300}
-            height={300}
+            className="members--img"
+            src="/img/profile/Agent Hellfire im Sage_-31.jpg"
+            alt="Victor Munhoz playing drums at Sage Club"
+            width={700}
+            height={600}
           />
         </section>
         <p>
@@ -66,7 +66,7 @@ export default function Members() {
           Check out what he’s been up to on his Instagram Account and Youtube
           Channel.
         </p>
-        <p>Picture: http://www.fh-eventfotografie.de/</p>
+        <p>Picture: Kleber Nascimento</p>
         <a target="_blank" href="https://www.instagram.com/victormunhoz89/">
           <Image
             class="img-icon"
