@@ -12,7 +12,7 @@ const productSchema = new Schema({
     XXL: { type: Number },
   },
   price: { type: Number, required: true },
-  image: { type: String, required: true },
+  images: { type: Array, required: true },
   description: { type: String },
 });
 
