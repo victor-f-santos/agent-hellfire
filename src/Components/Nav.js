@@ -1,17 +1,6 @@
 import Link from "next/link";
-import { useRef } from "react";
 
 export default function Nav() {
-  // document.querySelectorAll(".nav-bar a").forEach((anchor) => {
-  //   anchor.addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     console.log("currenttarget", e.target.href.split("/")[3]);
-  //     const links = e.target.href.split("/")[3];
-  //     links.scrollIntoView({
-  //       behavior: "smooth",
-  //     });
-  //   });
-  // });
   return (
     <nav class="nav-bar">
       <Link href="#bio">Bio</Link>
