@@ -17,15 +17,6 @@ export default function Home() {
         <Image src="/img/menu.png" alt="Menu Toggle" width={40} height={40} />
       </div>
 
-      <section class="background-image">
-        <Image
-          src="/img/Logo_BR_Transparent.png"
-          alt="Agent Hellfire Logo"
-          fill
-          style={{ objectFit: "contain" }}
-        />
-      </section>
-
       <Bio />
 
       <Members />

@@ -6,21 +6,23 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Shop() {
   const { data, error, isLoading } = useSWR("/api/products", fetcher);
+
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
-  console.log(data);
+
   if (!data || data.length === 0) {
     return <p>No products available</p>;
   }
+
   return (
     <>
       <h1 id="shop">Merch</h1>
       <div className="product-list">
         {data.map((product) => (
           <div key={product._id} className="product">
-            <h2>{product.name}</h2>
-            {product.images.map((image) => {
-              return (
+            <Link href={`${product._id}`}>
+              <h2>{product.name}</h2>
+              {product.images.map((image) => (
                 <Image
                   key={image}
                   src={image}
@@ -28,9 +30,8 @@ export default function Shop() {
                   width={100}
                   height={100}
                 />
-              );
-            })}
-
+              ))}
+            </Link>
             <p>Price: {product.price} €</p>
             <p>{product.description}</p>
           </div>
