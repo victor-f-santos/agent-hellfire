@@ -1,28 +1,48 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import Image from "next/image";
 
 export default function ProductDetails() {
   const router = useRouter();
   const { productId } = router.query;
+  console.log(productId);
+
   const { data, error, isLoading } = useSWR(
-    `/api/products/${productId}`,
-    fetcher
+    productId ? `/api/products/${productId}` : null
   );
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
-  if (!data || data.length === 0);
-  console.log("data:", data);
-  const { name, price, description, images, size } = data;
-  return (
-    <div>
-      <h1>Product Details</h1>
-      {name}
-      {images}
-      {price}
-      {size}
-      {description}
-    </div>
-  );
+  // if (!data || data.length === 0);
+
+  if (data) {
+    const { name, price, description, images, sizes } = data;
+
+    return (
+      <div>
+        <h1>Product Details</h1>
+        <p>{name}</p>
+        {images.map((image) => (
+          <Image key={image} src={image} alt={name} width={100} height={100} />
+        ))}
+        <p> {price} €</p>
+
+        {sizes && (
+          <>
+            <label for="size">Size:</label>
+            <select id="size">
+              {Object.keys(sizes).map((size) => {
+                const disabled = !sizes[size] ? "disabled" : null;
+                return (
+                  <option key={size} value={size} disabled={disabled}>
+                    {size}
+                  </option>
+                );
+              })}
+            </select>
+          </>
+        )}
+        <p> {description}</p>
+      </div>
+    );
+  }
 }

@@ -2,10 +2,8 @@ import Link from "next/link";
 import useSWR from "swr";
 import Image from "next/image";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
 export default function Shop() {
-  const { data, error, isLoading } = useSWR("/api/products", fetcher);
+  const { data, error, isLoading } = useSWR("/api/products");
 
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
