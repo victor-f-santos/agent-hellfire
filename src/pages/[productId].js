@@ -11,7 +11,19 @@ export default function ProductDetails() {
     productId ? `/api/products/${productId}` : null
   );
 
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [selectedQuantity, setSelectedQuantity] = useState(null);
+  async function handleAddToCart(item, quantity) {
+    const response = await fetch("/api/cart", {
+      method: "POST",
+      body: JSON.stringify({ product: item, quantity: quantity }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      await response.json();
+    } else {
+      console.error(`Error: ${response.status}`);
+    }
+  }
 
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
@@ -62,7 +74,7 @@ export default function ProductDetails() {
         </label>
         <p> {description}</p>
         <button
-          onClick={() => handleAddToCart(name, selectedSize, selectedQuantity)}
+          onClick={() => handleAddToCart(name, selectedQuantity)}
           disabled={isButtonDisabled}
         >
           Add to Cart
