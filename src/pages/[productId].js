@@ -67,6 +67,7 @@ export default function ProductDetails() {
         >
           Add to Cart
         </button>
+        <button onClick={() => router.push("/shop")}>Keep shopping</button>
       </div>
     );
   }
