@@ -12,7 +12,6 @@ export default function ProductDetails() {
   );
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
-  // if (!data || data.length === 0);
 
   if (data) {
     const { name, price, description, images, sizes } = data;
@@ -41,6 +40,18 @@ export default function ProductDetails() {
             </select>
           </>
         )}
+
+        <p>Quantity:</p>
+        <label for="dropdown">
+          <select name="quantity" id="dropdown">
+            <option value="1">1</option>
+
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>
         <p> {description}</p>
       </div>
     );
