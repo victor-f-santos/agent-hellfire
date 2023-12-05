@@ -1,20 +1,24 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function ProductDetails() {
   const router = useRouter();
   const { productId } = router.query;
-  console.log(productId);
 
   const { data, error, isLoading } = useSWR(
     productId ? `/api/products/${productId}` : null
   );
+
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
-
   if (data) {
     const { name, price, description, images, sizes } = data;
+
+    const isButtonDisabled = selectedQuantity < 1;
 
     return (
       <div>
@@ -43,7 +47,12 @@ export default function ProductDetails() {
 
         <p>Quantity:</p>
         <label for="dropdown">
-          <select name="quantity" id="dropdown">
+          <select
+            name="quantity"
+            id="dropdown"
+            value={selectedQuantity}
+            onChange={(e) => setSelectedQuantity(parseInt(e.target.value))}
+          >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -52,6 +61,12 @@ export default function ProductDetails() {
           </select>
         </label>
         <p> {description}</p>
+        <button
+          onClick={() => handleAddToCart(name, selectedSize, selectedQuantity)}
+          disabled={isButtonDisabled}
+        >
+          Add to Cart
+        </button>
       </div>
     );
   }
