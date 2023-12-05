@@ -45,7 +45,6 @@ export default function ProductDetails() {
         <label for="dropdown">
           <select name="quantity" id="dropdown">
             <option value="1">1</option>
-
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
