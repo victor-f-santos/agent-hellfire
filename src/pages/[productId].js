@@ -74,7 +74,7 @@ export default function ProductDetails() {
         </label>
         <p> {description}</p>
         <button
-          onClick={() => handleAddToCart(name, selectedQuantity)}
+          onClick={() => handleAddToCart(productId, selectedQuantity)}
           disabled={isButtonDisabled}
         >
           Add to Cart
