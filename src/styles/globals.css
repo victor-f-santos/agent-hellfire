@@ -112,3 +112,12 @@ h2 {
   flex-flow: column wrap;
   text-align: end;
 }
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 30px auto 0;
+  width: 100%;
+  bottom: 0;
+}
