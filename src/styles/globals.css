@@ -20,6 +20,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1 {
+  text-align: center;
+  text-shadow: 0 0 4px #ff0000;
+}
+
 h2 {
   color: red;
   text-shadow: 0 0 4px #ff0000;
@@ -30,7 +35,7 @@ h2 {
 .background-image {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .menu-toggle {
@@ -71,6 +76,7 @@ h2 {
   background-color: rgb(52, 58, 64);
   margin: 50px auto;
   padding: 10px;
+  height: 100%;
 }
 
 .band-bio > p {
@@ -90,11 +96,13 @@ h2 {
   background-image: url("/img/profile/IMG_9488.jpg");
   min-width: fit-content;
   min-height: 100vh;
+  z-index: -1;
 }
 
 .members--img--2 {
   background-image: url("/img/profile/Agent\ Hellfire\ im\ Sage_-31.jpg");
   min-height: 100vh;
+  z-index: -1;
 }
 
 .members--img,

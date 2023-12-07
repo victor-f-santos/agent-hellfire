@@ -5,7 +5,7 @@ export default function Members() {
     <>
       <h2 id="members">Members</h2>
       <article>
-        <h4 className="members--name">Adans Aldani</h4>
+        <h4 className="members--name">Adans Aldani - Vocals/Bass</h4>
         <div className="members--img"></div>
         <div className="members--text">
           <p>
@@ -36,7 +36,7 @@ export default function Members() {
         </div>
       </article>
       <article>
-        <h4 className="members--name">Victor Munhoz</h4>
+        <h4 className="members--name">Victor Munhoz - Drums/Backing Vocals</h4>
         <div className="members--img--2"></div>
         <div className="members--text">
           <p>

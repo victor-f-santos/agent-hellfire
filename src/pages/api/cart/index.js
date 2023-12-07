@@ -4,7 +4,7 @@ import dbConnect from "../../../../db/connect";
 export default async function handler(request, response) {
   await dbConnect();
   if (request.method === "GET") {
-    const products = await Cart.find();
+    const products = await Cart.find().populate("product").exec();
     console.log("=============================", products);
     return response.status(200).json(products);
   }

@@ -80,6 +80,14 @@ export default function ProductDetails() {
           Add to Cart
         </button>
         <button onClick={() => router.push("/shop")}>Keep shopping</button>
+        <button onClick={() => router.push("/cart")}>
+          <Image
+            src={"/public/img/shop/cart.png"}
+            width={50}
+            height={50}
+            alt="Shop cart button"
+          />
+        </button>
       </div>
     );
   }
