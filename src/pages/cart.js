@@ -25,7 +25,7 @@ export default function Cart() {
           <li key={item.product._id}>
             {item.product.name}
             <br />
-            {item.product.size}
+            {/* {item.product.size} */}
             {item.product.price}€
             <br />
             {item.product.images[0]}
