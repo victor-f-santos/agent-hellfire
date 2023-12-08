@@ -15,6 +15,17 @@ export default function ProductDetails() {
   const [selectedQuantity, setSelectedQuantity] = useState(null);
 
   async function handleAddToCart(item, quantity, selectedSize) {
+    if (item.maxQuantity === 0) {
+      return;
+    } else if (
+      item.sizes["S"] === 0 ||
+      item.sizes["M"] === 0 ||
+      item.sizes["L"] === 0 ||
+      item.sizes["XL"] === 0 ||
+      item.sizes["XXL"] === 0
+    ) {
+      return;
+    }
     const response = await fetch("/api/cart", {
       method: "POST",
       body: JSON.stringify({
