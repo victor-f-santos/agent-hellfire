@@ -136,6 +136,52 @@ p {
   justify-content: space-evenly;
 }
 
+.videos {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px solid red;
+  align-items: center;
+  min-width: 50%;
+}
+
+.music {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music > p {
+  background-color: black;
+}
+
+.music--spotify,
+.music--album-cover {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.contact > p {
+  background-color: black;
+  color: yellow;
+  padding: 10px auto;
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.contact--form {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: yellow;
+}
+
 footer {
   display: flex;
   flex-direction: row;
