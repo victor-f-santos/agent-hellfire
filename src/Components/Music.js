@@ -23,7 +23,7 @@ export default function Music() {
       <iframe
         class="music--spotify"
         src="https://open.spotify.com/embed/artist/4TGi2ZuKyxYQC2NeMOtu7Q?utm_source=generator&theme=0"
-        width="100%"
+        width="90%"
         height="380"
         frameborder="0"
         allowfullscreen=""

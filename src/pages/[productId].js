@@ -11,11 +11,28 @@ export default function ProductDetails() {
     productId ? `/api/products/${productId}` : null
   );
 
+  const [selectedSize, setSelectedSize] = useState("");
   const [selectedQuantity, setSelectedQuantity] = useState(null);
-  async function handleAddToCart(item, quantity) {
+
+  async function handleAddToCart(item, quantity, selectedSize) {
+    if (item.maxQuantity === 0) {
+      return;
+    } else if (
+      item.sizes["S"] === 0 ||
+      item.sizes["M"] === 0 ||
+      item.sizes["L"] === 0 ||
+      item.sizes["XL"] === 0 ||
+      item.sizes["XXL"] === 0
+    ) {
+      return;
+    }
     const response = await fetch("/api/cart", {
       method: "POST",
-      body: JSON.stringify({ product: item, quantity: quantity }),
+      body: JSON.stringify({
+        product: item,
+        quantity: quantity,
+        size: selectedSize,
+      }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
@@ -44,7 +61,11 @@ export default function ProductDetails() {
         {sizes && (
           <>
             <label for="size">Size:</label>
-            <select id="size">
+            <select
+              id="size"
+              value={selectedSize}
+              onChange={(e) => setSelectedSize(e.target.value)}
+            >
               {Object.keys(sizes).map((size) => {
                 const disabled = !sizes[size] ? "disabled" : null;
                 return (
@@ -74,12 +95,22 @@ export default function ProductDetails() {
         </label>
         <p> {description}</p>
         <button
-          onClick={() => handleAddToCart(productId, selectedQuantity)}
+          onClick={() =>
+            handleAddToCart(productId, selectedQuantity, selectedSize)
+          }
           disabled={isButtonDisabled}
         >
           Add to Cart
         </button>
         <button onClick={() => router.push("/shop")}>Keep shopping</button>
+        <button onClick={() => router.push("/cart")}>
+          <Image
+            src={"/img/shop/cart.png"}
+            width={50}
+            height={50}
+            alt="Shop cart button"
+          />
+        </button>
       </div>
     );
   }

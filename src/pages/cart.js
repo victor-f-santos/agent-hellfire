@@ -1,21 +1,81 @@
+import Link from "next/link";
 import useSWR from "swr";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default async function Cart() {
-  //   const { data, error, isLoading } = useSWR("/api/cart");
+export default function Cart() {
+  const router = useRouter();
+  const { data, mutate, error, isLoading } = useSWR("/api/cart");
+  const [totalSum, setTotalSum] = useState(null);
+  useEffect(() => {
+    const totalOneProduct = data?.map((item) => {
+      return item.quantity * item.product.price;
+    });
+    console.log("totalOneProduct: ", totalOneProduct);
+    if (!totalOneProduct || totalOneProduct.length > 0) {
+      setTotalSum(totalOneProduct?.reduce((a, b) => a + b));
+    }
+  }, [data]);
 
-  //   if (error) return <p>failed to load</p>;
-  //   if (isLoading) return <p>loading...</p>;
-  //   console.log("data: ", data);
-  //   if (!data || data.length === 0) {
-  //     return <p>No products available</p>;
-  //   }
+  if (error) return <p>failed to load</p>;
+  if (isLoading) return <p>loading...</p>;
+  console.log("data: ", data);
 
-  return <h1>hello</h1>;
+  async function deleteProduct(item) {
+    const response = await fetch(`/api/cart/${item}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      return;
+    }
+    mutate();
+  }
+
+  if (!data || data.length === 0) {
+    return (
+      <p>
+        Your cart is empty. Dont be such a cheap fuck and{" "}
+        <Link href={"/shop"}>buy our shit!</Link> We got good prices and great
+        quality!
+      </p>
+    );
+  }
+
   return (
-    <ul>
-      {/* {data.map((item) => (
-        <li key={item._id}>{item.product}</li>
-      ))} */}
-    </ul>
+    <>
+      <h1>Cart</h1>
+      <ul>
+        {data.map((item) => (
+          <>
+            <li key={item.product._id}>
+              {item.product.name}
+              <br />
+              {item.size}
+              {item.product.price}€
+              <br />
+              <Image
+                src={item.product.images[0]}
+                alt={item.product.name}
+                width={100}
+                height={100}
+              />
+              <br />
+              {item.product.description}
+              <br />
+              <button onClick={() => deleteProduct(item._id)} type="button">
+                Delete
+              </button>
+              <br />
+              <br />
+            </li>
+          </>
+        ))}
+      </ul>
+      <h2>Total: {totalSum}</h2>
+      <button onClick={() => router.push("/shop")}>
+        Spend mo' money on us!
+      </button>
+    </>
   );
 }
