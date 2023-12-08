@@ -5,9 +5,15 @@ export default async function handler(request, response) {
   await dbConnect();
   if (request.method === "GET") {
     const products = await Cart.find().populate("product").exec();
-    console.log("=============================", products);
     return response.status(200).json(products);
   }
+
+  // delete button
+  if (request.method === "DELETE") {
+    await Cart.findByIdAndDelete(id);
+    return response.status(200).json({ status: "Product deleted" });
+  }
+
   if (request.method === "POST") {
     console.log("request.body: ", request.body);
     await Cart.create(request.body);
