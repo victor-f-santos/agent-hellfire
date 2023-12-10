@@ -5,8 +5,9 @@ import Members from "@/Components/Members";
 import Music from "@/Components/Music";
 import Videos from "@/Components/Videos";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Nav from "../Components/Nav";
+import UpButton from "@/Components/UpButton";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,8 @@ export default function Home() {
       <Music />
 
       <Contact />
+
+      <UpButton />
     </>
   );
 }

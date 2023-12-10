@@ -190,3 +190,9 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
+.goTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
