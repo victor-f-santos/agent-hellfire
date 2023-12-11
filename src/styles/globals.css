@@ -80,6 +80,9 @@ p {
   font-size: 20px;
 }
 
+@media screen and (max-width: 900px) {
+}
+
 .band-bio {
   background-color: rgb(52, 58, 64);
   margin: 30px auto;
