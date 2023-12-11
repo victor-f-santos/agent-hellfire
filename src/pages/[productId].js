@@ -58,7 +58,7 @@ export default function ProductDetails() {
               value={selectedSize}
               onChange={(e) => setSelectedSize(e.target.value)}
             >
-              <option value="not chosen">---Please select---</option>
+              <option value="not chosen">---Choose your size---</option>
               {Object.keys(quantity).map((size) => {
                 const disabled = !quantity[size] ? "disabled" : null;
                 return (
