@@ -5,7 +5,7 @@ import Members from "@/Components/Members";
 import Music from "@/Components/Music";
 import Videos from "@/Components/Videos";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Nav from "../Components/Nav";
 import UpButton from "@/Components/UpButton";
 
