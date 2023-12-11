@@ -42,7 +42,7 @@ export default function ProductDetails() {
     const isButtonDisabled = selectedQuantity < 1;
 
     return (
-      <div>
+      <div className="product">
         <h1>Product Details</h1>
         <p>{name}</p>
         {images.map((image) => (

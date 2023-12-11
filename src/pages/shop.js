@@ -22,11 +22,12 @@ export default function Shop() {
               <h2>{product.name}</h2>
               {product.images.map((image) => (
                 <Image
+                  className="images--shop"
                   key={image}
                   src={image}
                   alt={product.name}
-                  width={100}
-                  height={100}
+                  width={300}
+                  height={300}
                 />
               ))}
             </Link>

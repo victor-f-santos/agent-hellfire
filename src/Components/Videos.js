@@ -12,7 +12,7 @@ export default function Videos() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
-
+        <br />
         <iframe
           width="560"
           height="315"

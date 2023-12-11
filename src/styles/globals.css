@@ -51,9 +51,11 @@ p {
 
 .menu-toggle {
   position: fixed;
-  margin: 0 10px;
-  top: 5px;
-  left: 5px;
+  margin: 10px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .nav-bar {
@@ -64,6 +66,8 @@ p {
   align-items: center;
   background-color: rgb(52, 58, 64, 0.9);
   padding: 30px;
+  visibility: visible;
+  transition: 1.5s;
 }
 
 .nav-bar a {
@@ -72,7 +76,6 @@ p {
   color: rgb(181, 181, 181);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 .nav-bar a:hover {
@@ -80,7 +83,15 @@ p {
   font-size: 20px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 766px) {
+  .nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: 1.5s;
+    visibility: visible;
+  }
 }
 
 .band-bio {
@@ -139,10 +150,20 @@ p {
   justify-content: space-evenly;
 }
 
+.fotos--shooting,
+.fotos--live {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.shooting-img {
+  object-fit: contain;
+}
+
 .videos {
   display: flex;
   flex-flow: column wrap;
-  border: 5px solid red;
   align-items: center;
   min-width: 50%;
 }
@@ -163,6 +184,14 @@ p {
   margin: 20px auto;
 }
 
+.images--shop {
+  object-fit: contain;
+}
+
+.product > p {
+  background-color: black;
+}
+
 .contact {
   display: flex;
   align-items: center;
@@ -172,17 +201,18 @@ p {
 
 .contact > p {
   background-color: black;
-  color: yellow;
+  color: #ffd700;
   padding: 10px auto;
   max-width: 300px;
   margin: 10px auto;
+  text-align: center;
 }
 
 .contact--form {
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: yellow;
+  color: #ffd700;
 }
 
 footer {

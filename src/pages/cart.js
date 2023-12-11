@@ -48,21 +48,24 @@ export default function Cart() {
       <ul>
         {data.map((item) => (
           <>
-            <li key={item.product._id}>
+            <li className="product" key={item.product._id}>
               {item.product.name}
               <br />
-              {item.quantity}
-              {item.size}
-              {item.product.price}€
+              <p>Quantity: {item.quantity}</p>
+              <br />
+              <p> Size: {item.size}</p>
+              <br />
+              <p>Price: {item.product.price}€</p>
               <br />
               <Image
+                className="images--shop"
                 src={item.product.images[0]}
                 alt={item.product.name}
-                width={100}
-                height={100}
+                width={300}
+                height={300}
               />
               <br />
-              {item.product.description}
+              <p>{item.product.description}</p>
               <br />
               <button onClick={() => deleteProduct(item._id)} type="button">
                 Delete
