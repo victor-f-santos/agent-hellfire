@@ -51,6 +51,7 @@ export default function Cart() {
             <li key={item.product._id}>
               {item.product.name}
               <br />
+              {item.quantity}
               {item.size}
               {item.product.price}€
               <br />
@@ -72,10 +73,8 @@ export default function Cart() {
           </>
         ))}
       </ul>
-      <h2>Total: {totalSum}</h2>
-      <button onClick={() => router.push("/shop")}>
-        Spend mo' money on us!
-      </button>
+      <h2>Total: {totalSum} €</h2>
+      <button onClick={() => router.push("/shop")}>Give us more money!</button>
     </>
   );
 }
