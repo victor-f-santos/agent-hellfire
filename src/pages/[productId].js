@@ -12,20 +12,11 @@ export default function ProductDetails() {
   );
 
   const [selectedSize, setSelectedSize] = useState("");
+  console.log({ selectedSize });
   const [selectedQuantity, setSelectedQuantity] = useState(null);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   async function handleAddToCart(item, quantity, selectedSize) {
-    if (item.maxQuantity === 0) {
-      return;
-    } else if (
-      item.sizes["S"] === 0 ||
-      item.sizes["M"] === 0 ||
-      item.sizes["L"] === 0 ||
-      item.sizes["XL"] === 0 ||
-      item.sizes["XXL"] === 0
-    ) {
-      return;
-    }
     const response = await fetch("/api/cart", {
       method: "POST",
       body: JSON.stringify({
@@ -37,6 +28,7 @@ export default function ProductDetails() {
     });
     if (response.ok) {
       await response.json();
+      setIsAddedToCart(true);
     } else {
       console.error(`Error: ${response.status}`);
     }
@@ -45,8 +37,8 @@ export default function ProductDetails() {
   if (error) return <p>failed to load</p>;
   if (isLoading) return <p>loading...</p>;
   if (data) {
-    const { name, price, description, images, sizes } = data;
-
+    const { name, price, description, images, quantity } = data;
+    console.log(quantity);
     const isButtonDisabled = selectedQuantity < 1;
 
     return (
@@ -58,7 +50,7 @@ export default function ProductDetails() {
         ))}
         <p> {price} €</p>
 
-        {sizes && (
+        {typeof quantity === "object" && (
           <>
             <label for="size">Size:</label>
             <select
@@ -66,8 +58,9 @@ export default function ProductDetails() {
               value={selectedSize}
               onChange={(e) => setSelectedSize(e.target.value)}
             >
-              {Object.keys(sizes).map((size) => {
-                const disabled = !sizes[size] ? "disabled" : null;
+              <option value="not chosen">---Please select---</option>
+              {Object.keys(quantity).map((size) => {
+                const disabled = !quantity[size] ? "disabled" : null;
                 return (
                   <option key={size} value={size} disabled={disabled}>
                     {size}
@@ -86,11 +79,14 @@ export default function ProductDetails() {
             value={selectedQuantity}
             onChange={(e) => setSelectedQuantity(parseInt(e.target.value))}
           >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            {Array.from(
+              { length: quantity[selectedSize] ?? quantity },
+              (_, index) => (
+                <option key={index + 1} value={index + 1}>
+                  {index + 1}
+                </option>
+              )
+            )}
           </select>
         </label>
         <p> {description}</p>
@@ -102,6 +98,7 @@ export default function ProductDetails() {
         >
           Add to Cart
         </button>
+        {isAddedToCart && <p>Item added to cart!</p>}
         <button onClick={() => router.push("/shop")}>Keep shopping</button>
         <button onClick={() => router.push("/cart")}>
           <Image
