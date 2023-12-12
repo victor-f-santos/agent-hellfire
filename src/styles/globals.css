@@ -157,15 +157,18 @@ p {
   justify-content: space-evenly;
 }
 
-.fotos--shooting,
-.fotos--live {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.shooting-img {
+.carousel--img {
   object-fit: contain;
+  margin: auto;
+  max-width: 1200px;
+}
+.carousel .carousel--img {
+  .slide {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
 }
 
 .videos {
