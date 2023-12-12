@@ -11,7 +11,7 @@ export default function Music() {
         width={350}
         height={350}
       />
-      <p>The Omen, released on October 30th</p>
+      <p>The Omen, EP released on October 30th 2020</p>
       <Image
         class="music--album-cover"
         src="/img/covers/DT_Cover_art.jpg"
@@ -19,7 +19,7 @@ export default function Music() {
         width={350}
         height={350}
       />
-      <p>D.T., released on December 13th</p>
+      <p>D.T., Single released on December 13th 2021</p>
       <iframe
         class="music--spotify"
         src="https://open.spotify.com/embed/artist/4TGi2ZuKyxYQC2NeMOtu7Q?utm_source=generator&theme=0"

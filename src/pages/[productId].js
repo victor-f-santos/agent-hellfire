@@ -42,11 +42,18 @@ export default function ProductDetails() {
     const isButtonDisabled = selectedQuantity < 1;
 
     return (
-      <div>
+      <div className="product">
         <h1>Product Details</h1>
         <p>{name}</p>
         {images.map((image) => (
-          <Image key={image} src={image} alt={name} width={100} height={100} />
+          <Image
+            className="images--shop"
+            key={image}
+            src={image}
+            alt={name}
+            width={300}
+            height={300}
+          />
         ))}
         <p> {price} €</p>
 

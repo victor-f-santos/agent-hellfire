@@ -1,14 +1,8 @@
 import Link from "next/link";
-import { useRef } from "react";
 
 export default function Nav() {
-  const navRef = useRef();
-
-  const showNav = () => {
-    navRef.current.classList.toogle("responsive_nav");
-  };
   return (
-    <nav class="nav-bar">
+    <nav className={`nav-bar`}>
       <Link href="#bio">Bio</Link>
       <Link href="#members">Members</Link>
       <Link href="#fotos">Fotos</Link>
@@ -18,7 +12,6 @@ export default function Nav() {
         Shop
       </Link>
       <Link href="#contact">Contact</Link>
-      <button onClick={showNav}></button>
     </nav>
   );
 }

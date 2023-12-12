@@ -29,7 +29,11 @@ export default function Footer() {
             height={40}
           />{" "}
         </Link>
-        <Link href="https://soundcloud.com/agent-hellfire" class="footer--icon">
+        <Link
+          target="_blank"
+          href="https://soundcloud.com/agent-hellfire"
+          class="footer--icon"
+        >
           <Image
             src="/img/logos/soundcloud_icon.png"
             alt="soundcloud icon"
@@ -38,6 +42,7 @@ export default function Footer() {
           />{" "}
         </Link>
         <Link
+          target="_blank"
           href="https://open.spotify.com/intl-de/artist/4TGi2ZuKyxYQC2NeMOtu7Q?si=d2W06jD4Tc6McP7xTKXEnA"
           class="footer--icon"
         >
@@ -48,7 +53,11 @@ export default function Footer() {
             height={40}
           />
         </Link>
-        <Link href="https://www.tiktok.com/@agenthellfire" class="footer--icon">
+        <Link
+          target="_blank"
+          href="https://www.tiktok.com/@agenthellfire"
+          class="footer--icon"
+        >
           <Image
             src="/img/logos/tiktok_icon.png"
             alt="tiktok icon"
@@ -56,7 +65,11 @@ export default function Footer() {
             height={40}
           />{" "}
         </Link>
-        <Link href="https://twitter.com/hellfireagent" class="footer--icon">
+        <Link
+          target="_blank"
+          href="https://twitter.com/hellfireagent"
+          class="footer--icon"
+        >
           <Image
             src="/img/logos/twitter_icon.png"
             alt="twitter icon"
@@ -65,6 +78,7 @@ export default function Footer() {
           />{" "}
         </Link>
         <Link
+          target="_blank"
           href="https://www.youtube.com/channel/UCPXWgKGSyCf7fLLV9_1VLjw?sub_confirmation=1"
           class="footer--icon"
         >

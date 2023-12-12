@@ -27,7 +27,8 @@ h1 {
   text-shadow: 0 0 4px #ff0000;
 }
 
-h2 {
+h2,
+h4 {
   color: red;
   text-shadow: 0 0 4px #ff0000;
   margin: 10px auto;
@@ -36,7 +37,7 @@ h2 {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .background-image {
@@ -51,9 +52,11 @@ p {
 
 .menu-toggle {
   position: fixed;
-  margin: 0 10px;
-  top: 5px;
-  left: 5px;
+  margin: 10px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .nav-bar {
@@ -62,8 +65,9 @@ p {
   position: fixed;
   width: 100%;
   align-items: center;
-  background-color: rgb(52, 58, 64, 0.9);
+  background-color: rgba(9, 9, 10, 0.7);
   padding: 30px;
+  visibility: visible;
 }
 
 .nav-bar a {
@@ -72,21 +76,35 @@ p {
   color: rgb(181, 181, 181);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 .nav-bar a:hover {
   color: white;
   font-size: 20px;
+  transition: 0.5s;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 670px) {
+  .nav-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transition: 1.5s;
+    visibility: visible;
+  }
+  .menu-toggle {
+    visibility: hidden;
+  }
 }
 
 .band-bio {
-  background-color: rgb(52, 58, 64);
+  background-color: rgba(9, 9, 10, 0.9);
   margin: 30px auto;
-  padding: 20px 15px 15px;
+  color: #ffea71;
+  border-radius: 20px;
+  max-width: 800px;
+  box-shadow: 1px 1px 10px red inset;
 }
 
 .band-bio > p {
@@ -139,10 +157,20 @@ p {
   justify-content: space-evenly;
 }
 
+.fotos--shooting,
+.fotos--live {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.shooting-img {
+  object-fit: contain;
+}
+
 .videos {
   display: flex;
   flex-flow: column wrap;
-  border: 5px solid red;
   align-items: center;
   min-width: 50%;
 }
@@ -155,12 +183,22 @@ p {
 
 .music > p {
   background-color: black;
+  color: #ffd700;
 }
 
 .music--spotify,
 .music--album-cover {
   max-width: 600px;
   margin: 20px auto;
+}
+
+.images--shop {
+  object-fit: contain;
+}
+
+.product > p {
+  background-color: black;
+  max-width: fit-content;
 }
 
 .contact {
@@ -172,17 +210,18 @@ p {
 
 .contact > p {
   background-color: black;
-  color: yellow;
+  color: #ffd700;
   padding: 10px auto;
   max-width: 300px;
   margin: 10px auto;
+  text-align: center;
 }
 
 .contact--form {
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: yellow;
+  color: #ffd700;
 }
 
 footer {
@@ -198,4 +237,10 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.hellfire {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
 }
