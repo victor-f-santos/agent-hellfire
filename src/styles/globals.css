@@ -158,9 +158,10 @@ p {
 }
 
 .carousel--img {
+  position: relative;
   object-fit: contain;
   margin: auto;
-  max-width: 1200px;
+  max-width: 900px;
 }
 .carousel .carousel--img {
   .slide {

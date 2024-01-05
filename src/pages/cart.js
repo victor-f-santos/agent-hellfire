@@ -35,9 +35,7 @@ export default function Cart() {
   if (!data || data.length === 0) {
     return (
       <p>
-        Your cart is empty. Dont be such a cheap fuck and{" "}
-        <Link href={"/shop"}>buy our shit!</Link> We got good prices and great
-        quality!
+        Your cart is empty. Go back to our <Link href={"/shop"}>shop.</Link>
       </p>
     );
   }
@@ -76,8 +74,8 @@ export default function Cart() {
           </>
         ))}
       </ul>
+      <button onClick={() => router.push("/shop")}>Keep shopping</button>
       <h2>Total: {totalSum} €</h2>
-      <button onClick={() => router.push("/shop")}>Give us more money!</button>
     </>
   );
 }

@@ -23,7 +23,7 @@ export default function Members() {
             Sed delectus nulla nostrum. A tenetur optio nihil modi
             exercitationem enim.
           </p>
-          <p>Picture: Kaie Orloff</p>
+          <p>Picture: Kaie de França</p>
           <a target="_blank" href="https://www.instagram.com/adans_ix/">
             <Image
               class="img-icon"
